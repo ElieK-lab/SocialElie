@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         $user = User::factory()->create([ //this will make random data dor one user except the name
             'name' => 'Elie Karra'
         ]);
-        Post::factory(5)->create([
+        Post::factory(100)->create([
             'user_id' => $user->id
         ]);
     }

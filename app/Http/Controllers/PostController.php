@@ -20,4 +20,5 @@ class PostController extends Controller
             'post' => $post //Post::findOrFail($id) //This Concept is Known by rout model binding
         ]);
     }
+    //index,show,create,store,edit,update,destroy
 }
