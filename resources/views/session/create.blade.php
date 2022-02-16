@@ -12,7 +12,7 @@
                     </label>
                     <input class=" border border-gray-400 p-2 w-full" type="email" name="email" id="email" value="{{old('email')}}" required>
                     @error('email')
-                    <p class="text-red-600 text-xs mt-1 ">{{$message}}</p>
+                    <p class="text-danger text-xs mt-1 ">{{$message}}</p>
                     @enderror
                 </div>
                 <div>
@@ -22,7 +22,7 @@
                     <input class=" border border-gray-400 p-2 w-full" type="password" name="password" id="password"
                            required>
                     @error('password')
-                    <p class="text-red-600 text-xs mt-1 ">{{$message}}</p>
+                    <p class="text-danger text-xs mt-1 ">{{$message}}</p>
                     @enderror
                 </div>
                 <div class="mb-6 text-center mt-3">

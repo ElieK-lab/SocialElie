@@ -75,22 +75,8 @@
                     </div>
 
                     <section class="col-span-8 mt-3">
-                        <x-panel>
-                            <form action="#" method="post" >
-                                @csrf
-                                <header class="flex items-center">
-                                    <img src="https://i.pravatar.cc/60?u={{$post->author->id}}" width="40" height="40" class="rounded-circle">
-                                    <h3 class="ml-3">Want to Participate!</h3>
-                                </header>
-                                <div class="mt-3">
-                                    <textarea name="body" class="w-full text-xs focus:outline-none focus:ring"  rows="5" placeholder="Quick!,think in something to say.!"></textarea>
-                                </div>
-                                <div class="flex justify-content-end mt-3 border-top border-gray-200 pt-3">
-                                    <button type="submit" class="bg-blue-500 text-white rounded py-2 px-4 hover:bg-blue-600">Post</button>
-                                </div>
+                        @include('posts._add-comment-form')
 
-                            </form>
-                        </x-panel >
                         @foreach($post->comments as $comment)
                             <x-post-comment  :comment="$comment"/>
                         @endforeach
