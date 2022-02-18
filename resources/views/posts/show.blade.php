@@ -66,7 +66,7 @@
                         </div>
                     </div>
 
-                    <h1 class="font-bold text-3xl lg:text-4xl mb-10">
+                    <h1 class="font-bold text-3xl lg:text-4xl mb-10 ">
                         {{ $post->title }}
                     </h1>
 
@@ -77,8 +77,8 @@
                     <section class="col-span-8 mt-3">
                         @include('posts._add-comment-form')
 
-                        @foreach($post->comments as $comment)
-                            <x-post-comment  :comment="$comment"/>
+                        @foreach ($post->comments as $comment)
+                            <x-post-comment :comment="$comment" />
                         @endforeach
                     </section>
                 </div>

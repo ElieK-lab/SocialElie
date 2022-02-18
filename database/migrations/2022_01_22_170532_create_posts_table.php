@@ -23,6 +23,8 @@ class CreatePostsTable extends Migration
             $table->text('body');
             $table->timestamps();
             $table->timestamp('published_at')->nullable();
+
+            $table->index(['user_id','category_id'],'user_category_index');
         });
     }
 

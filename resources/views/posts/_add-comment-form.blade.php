@@ -9,7 +9,7 @@
             <div class="mt-3">
                 <textarea name="body" class="w-full text-xs focus:outline-none focus:ring" required  rows="5" placeholder="Quick!,think in something to say.!"></textarea>
                 @error('body')
-                <span class="text-danger text-sm">{{$message}}</span>
+                    <span class="text-danger text-sm">{{$message}}</span>
                 @enderror
             </div>
             <x-submit-button>Post</x-submit-button>
