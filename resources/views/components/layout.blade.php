@@ -33,16 +33,16 @@
                         <x-slot name="trigger">
                             <button class="text-xs font-bold uppercase">Welcome ,{{auth()->user()->name}}!</button>
                         </x-slot>
-                        <x-dropdown-item href="/admin/posts/create" :active="request()->is('admin/posts/create')">New Post</x-dropdown-item>
-                        <x-dropdown-item href="/admin/posts" :active="request()->is('admin/posts')">DashBoard</x-dropdown-item>
+                        @admin
+                            <x-dropdown-item href="/admin/posts/create" :active="request()->is('admin/posts/create')">New Post</x-dropdown-item>
+                            <x-dropdown-item href="/admin/posts" :active="request()->is('admin/posts')">DashBoard</x-dropdown-item>
+                        @endadmin
                         {{--  @click.prevent:to prevent default action--}}
                         <x-dropdown-item href="#" x-data="{}" @click.prevent="document.querySelector('#logout-form').submit()">Log Out</x-dropdown-item>
-                        <form id="logout-form" action="/logout" method="post" class="text-xs font-semibold text-blue-500 ml-3 hidden">
+                        <form id="logout-form" action="/logout" method="POST" class="text-xs font-semibold text-blue-500 ml-3 hidden">
                             @csrf
                         </form>
                     </x-dropdown>
-
-
 
                 @else
                     <a href="/register" class="text-xs font-bold uppercase">Register</a>
@@ -68,14 +68,12 @@
                         @csrf
                         <div class="lg:py-3 lg:px-5 flex items-center">
                             <label for="email" class="hidden lg:inline-block">
-                                <img src="./images/mailbox-icon.svg" alt="mailbox letter">
+                                <img src="/images/mailbox-icon.svg" alt="mailbox letter">
                             </label>
                             <div>
                                 <input id="email" type="text" name="email" placeholder="Your email address"
                                     class="lg:bg-transparent py-2 lg:py-0 pl-4 focus-within:outline-none">
-                                @error('email')
-                                    <span class="text-danger text-sm">{{$message}}</span>
-                                @enderror
+                                <x-form.error name="email"/>
                             </div>
                         </div>
 
